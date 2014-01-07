@@ -1,0 +1,17 @@
+ media_link = util.get_full_url(self, '/static/audios/loc1.mp3')
+        if media_link:
+          if media_link.startswith('/'):
+            media_link = util.get_full_url(self, media_link)
+          resp = urlfetch.fetch(media_link, deadline=60)
+          media = MediaIoBaseUpload(
+              io.BytesIO(resp.content), mimetype='video/mp4', resumable=True)
+        else:
+          media = None
+    
+        # self.mirror_service is initialized in util.auth_required.
+        try:
+            self.mirror_service.timeline().insert(body=body, media_body=media).execute()
+            return  'A Video item has been inserted'
+        except errors.HttpError, error:
+            print 'An error occurred: %s' % error
+            return None
