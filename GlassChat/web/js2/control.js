@@ -1,25 +1,31 @@
 
+var selectedText = "";
+
 $(document).ready(function(){
 	console.log('document ready');
     loadUIDs();
     //loadMedia();
-    $("#chatbox").change(function(){
-    $(glassview).html($(chatbox).val());
+    //$("#chatbox").change(function(){
+    //$(glassview).html($(chatbox).val());
     $("#chatbox" ).bind('keypress', function(e){
-   if ( e.keyCode == 13 && e.ctrlKey) {
-     insertContent()
-     console.log("ctrl enter pressed ")
-   }
- });
+    	console.log(e.keyCode);
+    	   e.preventDefault();
+    	   ShowSelection();
+	 });
     //console.log("changed ! ");
-    })
+    //})
+    console.log('triggering..');
+    //document.onmouseup = function (e) {  }
     
-        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 	var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
 	if((!isChrome)&&(!isSafari)){
 		alert("please use either chrome or safari");
 	}
+	
+	clearUIDs();
+    
  });
 
 function loadUIDs() {   
@@ -70,17 +76,17 @@ console.log("clearing out data")
             }
     
     
-function insertContent(){	
-console.log("inserting content..");
+function insertContent(what){	
+console.log("inserting content.." + what);
 	// for each selected UID, send contents of text box
 	$('.glasses option:selected').each(function(idx, item){
-		sendContent(item.value);
+		sendContent(item.value, what);
 		})
 		}
 		
-function sendContent(uid){
-	content = jQuery('textarea#chatbox').val();
-	content = encodeURI(content)
+function sendContent(uid, what){
+	//content = jQuery('textarea#chatbox').val();
+	content = encodeURI(what)
 	url = "http://ether.remap.ucla.edu/glass/data.py/insertContentFor?uid="+uid+"&content="+content
 	var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
@@ -91,4 +97,32 @@ function sendContent(uid){
             }
             }
             xobj.send(null);
+}
+
+function ShowSelection()
+{
+  var textComponent = document.getElementById('chatbox');
+  var selectedText;
+  // IE version
+  if (document.selection != undefined)
+  {
+    textComponent.focus();
+    var sel = document.selection.createRange();
+    selectedText = sel.text;
+  }
+  // Mozilla version
+  else if (textComponent.selectionStart != undefined)
+  {
+    var startPos = textComponent.selectionStart;
+    var endPos = textComponent.selectionEnd;
+    selectedText = textComponent.value.substring(startPos, endPos)
+  }
+  console.log("You selected: " + selectedText);
+  
+  selectedText = selectedText;
+  
+    
+  insertContent(selectedText);
+  $(glassview).html(selectedText);
+  //clearUIDs();
 }

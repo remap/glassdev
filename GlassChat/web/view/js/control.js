@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
 	console.log('document ready');
-    loadUIDs();
-    //loadMedia();
+    //loadUIDs();
+    loadMedia();
     $("#chatbox").change(function(){
     $(glassview).html($(chatbox).val());
     $("#chatbox" ).bind('keypress', function(e){
@@ -13,14 +13,40 @@ $(document).ready(function(){
  });
     //console.log("changed ! ");
     })
-    
-        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-	var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
-
-	if((!isChrome)&&(!isSafari)){
-		alert("please use either chrome or safari");
-	}
  });
+
+
+function loadMedia() {   
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'http://ether.remap.ucla.edu/glass/view/database.py/getAllMedia');
+   	console.log('loading data');
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4) {
+            var jsonData = xobj.responseText;
+            processMedia(jsonData);
+        }
+    }
+    xobj.send(null);
+    // $(glassview).html($(chatbox).val());
+}
+
+
+function processMedia(data){
+	//console.log('data loaded' + data);
+	var vids = eval('(' + data + ')');
+	
+	$('#glasses').html("");
+	
+	$.each(vids, function(key, value) {   
+     $('#glasses')
+      .append($("<option></option>")
+      .attr("value",vids[key].src)
+      .text(vids[key].name)); 
+      });
+}
+
+
 
 function loadUIDs() {   
     var xobj = new XMLHttpRequest();
@@ -36,8 +62,6 @@ function loadUIDs() {
     xobj.send(null);
      $(glassview).html($(chatbox).val());
 }
-
-
 
 
 function processUID(data){
