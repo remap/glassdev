@@ -1,4 +1,4 @@
-glassdev
+Remap Glass Devlopment
 ========
 
 Google Glass development apps are here. 
@@ -46,7 +46,7 @@ glassBurst
 
 continuous photography
 
-status: not working
+status: not working / crashes. 
 
 
 glassMirror
@@ -62,10 +62,16 @@ glassEffect
 
 realtime video effects on glass
 
-status: not working
+status: semi-functional (video effect works, but unintended artifacts exist)
 
 
 glassSense
 ========
 
 the goal is to expose all sensors in glass, so they can be easily used in other projects if needed. 
+
+status: semi-functional 
+
+individual sensor examples work, but need to be both expanded to rest of sensors, and compiled into single application. 
+
+
