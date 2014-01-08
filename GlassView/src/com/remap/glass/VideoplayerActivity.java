@@ -1,4 +1,4 @@
-package com.remap.vplayer;
+package com.remap.glass;
 
 import android.os.Bundle;
 import android.app.Activity;
