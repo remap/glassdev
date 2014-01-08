@@ -1,4 +1,4 @@
-package com.remap.geopoem;
+package com.remap.glass;
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 
@@ -6,7 +6,7 @@ import android.app.Application;
 import android.util.Log;
 
 
-public class GeoPoem extends Application {
+public class GlassPlace extends Application {
 	
 	// singleton
 	/*	
@@ -36,7 +36,7 @@ public class GeoPoem extends Application {
         	// the above 'normal' is probably fine; but for starters we'll do a broadcast every 1 min, force if none for 2 min..
         	// 60 * 1000, 2 * 60 * 1000
         	// LocationLibrary.initialiseLibrary(getBaseContext(), 60 * 1000, 2 * 60 * 1000, "com.remap.geopoem");
-        	LocationLibrary.initialiseLibrary(getBaseContext(), 10 * 1000, 1 * 30 * 1000, "com.remap.geopoem");
+        	LocationLibrary.initialiseLibrary(getBaseContext(), 10 * 1000, 1 * 30 * 1000, "com.remap.glass.GlassPlace");
         } catch (UnsupportedOperationException ex) {
             Log.d("TestApplication", "UnsupportedOperationException thrown - the device doesn't have any location providers");
         }

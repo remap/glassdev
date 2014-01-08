@@ -1,4 +1,4 @@
-package com.remap.geopoem;
+package com.remap.glass;
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibraryConstants;
