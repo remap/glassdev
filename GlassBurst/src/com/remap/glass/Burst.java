@@ -1,5 +1,4 @@
-package com.remap.glassburst;
-
+package com.remap.glass;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -7,14 +6,14 @@ import android.hardware.Camera;
 import android.util.Log;
 import android.view.Menu;
 
-public class BurstAction extends Activity {
+public class Burst extends Activity {
 	
 	Camera mCamera;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_burst_action);
+		setContentView(R.layout.burst);
 		safeCameraOpen(1);
 	}
 
