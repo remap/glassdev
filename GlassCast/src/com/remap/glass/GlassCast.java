@@ -1,4 +1,4 @@
-package com.remap.vbroadcast;
+package com.remap.glass;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -14,7 +14,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 
-public class VideoBroadcast extends Activity {
+public class GlassCast extends Activity {
 	
 	private Camera mCamera;
 	private MediaRecorder mMediaRecorder;
