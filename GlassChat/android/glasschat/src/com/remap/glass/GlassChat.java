@@ -1,4 +1,4 @@
-package com.remap.glasschat;
+package com.remap.glass;
 import android.provider.Settings.Secure;
 
 import android.app.Activity;
@@ -8,7 +8,7 @@ import android.webkit.WebView;
 /**
  * @author Alex Nano
  */
-public class glasschat extends Activity {
+public class GlassChat extends Activity {
     /**
      * Called when the activity is first created.
      */
