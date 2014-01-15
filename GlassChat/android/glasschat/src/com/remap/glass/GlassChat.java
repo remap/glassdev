@@ -18,8 +18,12 @@ public class GlassChat extends Activity {
         setContentView(R.layout.main);
         String android_id = Secure.getString(this.getContentResolver(),Secure.ANDROID_ID); 
         WebView engine = (WebView) findViewById(R.id.web_engine);
-        engine.loadUrl("http://ether.remap.ucla.edu/glass/index.html?uid="+android_id);
+        engine.setWebChromeClient(chromeClient);
+        engine.setWebViewClient(wvClient);
         engine.getSettings().setJavaScriptEnabled(true);
+        engine.getSettings().setPluginsEnabled(true)
+        engine.loadUrl("http://ether.remap.ucla.edu/glass/index.html?uid="+android_id);
+       
 
         //String data = "<html>" + 
         //"<meta name='viewport content=width=device-width, initial-scale=1.02' />" +

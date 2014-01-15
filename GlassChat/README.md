@@ -41,3 +41,6 @@ as of writing, the glass native apk is complete.
 image upload & client pushing works. 
 video won't work (yet) until html5 video works... thus we have a separate glass video player app. 
 access control should be added (i added, but glass can't support .htaccess... must think of other way.)
+
+it seems some people have indeed gotten html5 video to work, after extensive hacking. must give this another shot in future. 
+http://stackoverflow.com/questions/3815090/webview-and-html5-video
