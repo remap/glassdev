@@ -16,10 +16,6 @@ import android.view.Menu;
 
 public class GlassCastActivity extends Activity {
 	
-	private Camera mCamera;
-	private MediaRecorder mMediaRecorder;
-	private Socket socket;
-	
 
 
 	@Override
@@ -31,18 +27,7 @@ public class GlassCastActivity extends Activity {
 		// but ultimately it doesn't help the end result, 
 		// so i will have to get all this out of main thread
 		setContentView(R.layout.activity_glasscast);
-		try {
-			Log.d("Vplayer","making video recorder");
-			makeVideoRecorder();
-		} catch (UnknownHostException e) {
-			Log.d("Vplayer","oops");
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			Log.d("Vplayer","oops2");
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		new VideoCast().execute(null,null,null);
 	}
 
 	@Override
@@ -51,27 +36,5 @@ public class GlassCastActivity extends Activity {
 		getMenuInflater().inflate(R.menu.video_broadcast, menu);
 		return true;
 	}
-
-	public boolean makeVideoRecorder() throws UnknownHostException, IOException{
-		// this is your network socket
-		socket = new Socket(InetAddress.getByName("128.97.152.51"),5000);
-		ParcelFileDescriptor pfd = ParcelFileDescriptor.fromSocket(socket);
-		mCamera = Camera.open(1);
-		mMediaRecorder = new MediaRecorder();
-		mMediaRecorder.setOutputFile(pfd.getFileDescriptor());
-		mCamera.unlock();
-		mMediaRecorder.prepare();
-		mMediaRecorder.setCamera(mCamera);
-		mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
-		mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
-		mMediaRecorder.setOutputFormat(2); //H264
-		mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
-		mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.DEFAULT);
-		//mMediaRecorder.setPreviewDisplay(mPreview.getHolder().getSurface());
-		mMediaRecorder.start();
-		Log.d("Vplayer","video broadcasting...");
-		return true;
-		
-	}
-	
 }
+
