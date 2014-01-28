@@ -1,40 +1,66 @@
 package com.remap.glass;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.Socket;
-import java.net.UnknownHostException;
-
-import android.hardware.Camera;
-import android.media.MediaRecorder;
-import android.os.Bundle;
-import android.os.ParcelFileDescriptor;
-import android.os.StrictMode;
 import android.app.Activity;
-import android.util.Log;
-import android.view.Menu;
+import android.content.Intent;
+import android.hardware.Camera;
+import android.os.Bundle;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 
-public class GlassCastActivity extends Activity {
-	
+public class GlassCastActivity extends Activity implements SurfaceHolder.Callback {
+    private static final String TAG = "Recorder";
+    public static SurfaceView mSurfaceView;
+    public static SurfaceHolder mSurfaceHolder;
+    public static Camera mCamera ;
+    public static boolean mPreviewRunning;
 
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_glasscast);
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		// hack to get around having to thread... 
-		//StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		//StrictMode.setThreadPolicy(policy); 
-		// but ultimately it doesn't help the end result, 
-		// so i will have to get all this out of main thread
-		setContentView(R.layout.activity_glasscast);
-		new VideoCast().execute(null,null,null);
-	}
+        mSurfaceView = (SurfaceView) findViewById(R.id.surfaceView1);
+        mSurfaceHolder = mSurfaceView.getHolder();
+        mSurfaceHolder.addCallback(this);
+        mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.video_broadcast, menu);
-		return true;
-	}
+        Button btnStart = (Button) findViewById(R.id.StartService);
+        btnStart.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(GlassCastActivity.this, RecorderService.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startService(intent);
+                finish();
+            }
+        });
+
+        Button btnStop = (Button) findViewById(R.id.StopService);
+        btnStop.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                stopService(new Intent(GlassCastActivity.this, RecorderService.class));
+            }
+        });
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+        // TODO Auto-generated method stub
+
+    }
 }
-
