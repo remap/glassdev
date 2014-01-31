@@ -25,6 +25,7 @@ public class RecorderService extends Service {
 
         @Override
         public void onCreate() {
+        	Log.e(TAG,"Yay");
             mRecordingStatus = false;
             //mServiceCamera = CameraRecorder.mCamera;
             mServiceCamera = Camera.open();
@@ -51,9 +52,9 @@ public class RecorderService extends Service {
         }   
 
         public boolean startRecording(){
-        	Log.d(TAG,"recording started...");
+        	Log.e(TAG,"recording started...");
             try {
-            	Log.d(TAG,"for real");
+            	Log.d(TAG,"recording started, for real...");
                 Toast.makeText(getBaseContext(), "Recording Started", Toast.LENGTH_SHORT).show();
 
                 //mServiceCamera = Camera.open();

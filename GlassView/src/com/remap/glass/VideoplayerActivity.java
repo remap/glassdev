@@ -3,6 +3,7 @@ package com.remap.glass;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.hardware.Camera;
 import android.util.Log;
 import android.view.Menu;
 import android.media.MediaPlayer;
@@ -26,6 +27,8 @@ public class VideoplayerActivity extends Activity {
 	public String oldLast = "";
 	private GestureDetector mGestureDetector;
 	String VideoURL = "http://ether.remap.ucla.edu/glass/test/3.mp4";
+	
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

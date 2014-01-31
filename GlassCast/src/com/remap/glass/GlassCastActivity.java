@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class GlassCastActivity extends Activity implements SurfaceHolder.Callback {
     private static final String TAG = "Recorder";
@@ -22,6 +24,7 @@ public class GlassCastActivity extends Activity implements SurfaceHolder.Callbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glasscast);
 
+        Log.e(TAG,"starting...");
         mSurfaceView = (SurfaceView) findViewById(R.id.surfaceView1);
         mSurfaceHolder = mSurfaceView.getHolder();
         mSurfaceHolder.addCallback(this);
@@ -35,6 +38,7 @@ public class GlassCastActivity extends Activity implements SurfaceHolder.Callbac
                 Intent intent = new Intent(GlassCastActivity.this, RecorderService.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startService(intent);
+                Log.d(TAG,"intented...");
                 finish();
             }
         });
@@ -43,7 +47,7 @@ public class GlassCastActivity extends Activity implements SurfaceHolder.Callbac
         btnStop.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
-            {
+            {	 Log.e(TAG,"stoppping...");
                 stopService(new Intent(GlassCastActivity.this, RecorderService.class));
             }
         });
