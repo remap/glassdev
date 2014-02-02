@@ -16,6 +16,30 @@ realtime glass teleprompter.
 
 status: works well. 
 
+Update:
+
+now records video.
+
+1) after launch, tap side once to start preview / camera roll. 
+
+2) when ready, tap again to start recording. you will see preview moving. 
+
+3) when done with take, swipe forward to stop recording. you will see notification that it stopped, and the preview will pause. 
+
+4) to start next take, tap again, it will record / preview will be moving. 
+
+5) to stop, swipe forward. 
+
+
+to get video off device, plug into computer w/ android SDK on it and type:
+
+adb pull /sdcard/movies/GlassChat
+
+when you pull, you will want to wipe files for storage
+
+adb shell rm /sdcard/movies/GlassChat/*.mp4
+
+
 
 glassView
 ========
@@ -31,6 +55,7 @@ glassCast
 realtime video broadcast from glass
 
 status: not working
+
 
 
 glassPlace

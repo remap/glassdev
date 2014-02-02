@@ -126,6 +126,7 @@ public class GlassChat extends Activity {
         WebViewClient wvClient = null;
 		engine.setWebViewClient(wvClient);
         engine.getSettings().setJavaScriptEnabled(true);
+        engine.setBackgroundColor(0x00000000);
         
         // load the page for display on glass
         engine.loadUrl(URL+android_id);
@@ -319,12 +320,12 @@ public class GlassChat extends Activity {
                     } else if (gesture == Gesture.SWIPE_RIGHT) {
                         // do something on right (forward) swipe
                     	Log.d(TAG,"forward swipe");
-                    	Log.d(TAG,"backward swipe");
                    	 	Intent i = new Intent(STOP);
                    	 	sendBroadcast(i);
                         return true;
                     } else if (gesture == Gesture.SWIPE_LEFT) {
                         // do something on left (backwards) swipe
+                    	Log.d(TAG,"backward swipe");
                         return true;
                     }
                     return false;

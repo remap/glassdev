@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:keepScreenOn="true"
         >
 
-    <WebView
-        android:id="@+id/web_engine"
-        android:layout_width="183dp"
-        android:layout_height="71dp" />
-
     <SurfaceView
         android:id="@+id/camera_view"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:alpha="1"
+        android:focusableInTouchMode="false"
+        android:longClickable="false" />
+
+    <WebView
+        android:id="@+id/web_engine"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="fill_parent"
+        android:layout_margin="0dp"
+        android:layout_marginTop="0dp"
+        android:alpha=".5" />
     
-</LinearLayout>
+</FrameLayout>
 
 
 
