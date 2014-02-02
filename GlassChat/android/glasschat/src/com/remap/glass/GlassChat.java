@@ -45,6 +45,7 @@ public class GlassChat extends Activity {
 	private static final String URL = "http://ether.remap.ucla.edu/glass/index.html?uid=";
 
 	static final String START = "com.remap.glass.GlassChat.START_RECORDING";
+	static final String STOP = "com.remap.glass.GlassChat.STOP_RECORDING";
 	//IntentFilter intentFilter = new IntentFilter(START);
 	
 	// STATII
@@ -102,7 +103,7 @@ public class GlassChat extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mGestureDetector = createGestureDetector(this);
+        
 		//requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 		//		WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -117,7 +118,7 @@ public class GlassChat extends Activity {
         
         // initialize webkit view
         WebView engine = (WebView) findViewById(R.id.web_engine);
-        
+        mGestureDetector = createGestureDetector(this);
         // this is an attempt at getting HTML5 video to play
         // turns out it's far more complicated... yet leaving here as it does not hurt :) 
         WebChromeClient chromeClient = null;
@@ -144,7 +145,7 @@ public class GlassChat extends Activity {
 
 		//registerReceiver(start, new IntentFilter(Intent.ACTION_MAIN));
 		registerReceiver(start, new IntentFilter(START));
-		registerReceiver(stop, new IntentFilter(Intent.ACTION_SCREEN_OFF));
+		registerReceiver(stop, new IntentFilter(STOP));
        
 		//startRecorder();
 		
@@ -188,9 +189,8 @@ public class GlassChat extends Activity {
 			// glass specific bug
 			// https://code.google.com/p/google-glass-api/issues/detail?id=360
 			// https://code.google.com/p/google-glass-api/issues/detail?id=228&can=1&q=MediaRecorder&colspec=ID%20Type%20Status%20Priority%20Owner%20Component%20Summary
-			//mCamera = getCameraInstance();
-			
 			Log.d(TAG,"have camera, let's reset preview per bug...");
+			//mCamera = getCameraInstance();
 			/*
 			try {
 				mCamera.setPreviewDisplay(null);
@@ -319,12 +319,12 @@ public class GlassChat extends Activity {
                     } else if (gesture == Gesture.SWIPE_RIGHT) {
                         // do something on right (forward) swipe
                     	Log.d(TAG,"forward swipe");
-
+                    	Log.d(TAG,"backward swipe");
+                   	 	Intent i = new Intent(STOP);
+                   	 	sendBroadcast(i);
                         return true;
                     } else if (gesture == Gesture.SWIPE_LEFT) {
                         // do something on left (backwards) swipe
-                    	Log.d(TAG,"backward swipe");
-
                         return true;
                     }
                     return false;
