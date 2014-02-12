@@ -177,6 +177,7 @@ public class GlassChat extends Activity {
 
 	private void startRecorder() {
 		Log.d(TAG,"starting recorder...");
+		//Toast.makeText(GlassChat.this, "starting recorder", Toast.LENGTH_SHORT).show();
 		if (recorder == null) {
 			
 			File file = getOutputMediaFile();
