@@ -49,14 +49,15 @@
     }
 */
     $rand = rand ( 1, 1000000);
+    error_log("send2.php :: getting record...");
     $result = mysql_query("SELECT * FROM brain WHERE id = $rand Limit 1") or die(mysql_error()); 
-
+	error_log("send2.php :: got record.");
     while($row = mysql_fetch_array($result))
     {
         $sqlID = $row['id'];
         $sqlPhrase = $row['phrase'];
     }   
-
+	error_log("send2.php :: echoing record.");
     echo $sqlPhrase;
 
     

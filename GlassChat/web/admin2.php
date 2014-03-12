@@ -449,7 +449,7 @@
                 </div><!--end-->
 			          <input class="knob brainB" data-angleOffset=-125 data-angleArc=250 data-fgColor="#1585FF" value="50">
               	<button class="btn btn-large btn-primary" type="button submit" name="submit" type="submit">Push to Steve</button><br />
-                <small><a href="http://glass.remap.ucla.edu/gb/glass.php?uid=b9a33b18054a368a" target="_blank">Glass.03 - b9a33b18054a368a</a></small>
+                <small><a href="http://glass.remap.ucla.edu/gb/glass.php?uid=b8b35a24ee47885a" target="_blank">Glass.03 - b8b35a24ee47885a</a></small>
 			        	<div class="lead text-center"><div id="glassbtext" ></div></div>
 			        </form>
 				</div>
@@ -501,10 +501,10 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="./assets/js/bootstrap.js"></script>
-    <script src="./assets/js/bootstrap-switch.min.js"></script>
-    <script src="./assets/js/jquery.knob.js"></script>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="./assets/js/bootstrap.js"></script> -->
+    <!-- <script src="./assets/js/bootstrap-switch.min.js"></script>-->
+    <!-- <script src="./assets/js/jquery.knob.js"></script>-->
         <script>
         var restrict = true; //0 no - 1 yes
         /*
@@ -544,7 +544,7 @@
             }, 300); 
 
           });
-*/
+
 
             $(function($) {
 
@@ -633,7 +633,9 @@
                                                 }
                                     });
             });
+            */
         </script>
+        
     <script type="text/javascript">
         function isBlank(str) {
 	      return (!str || /^\s*$/.test(str));
@@ -701,7 +703,7 @@
       $(function() {   
         $("#glassbpush .btn").click(function() { 
           var knob_val = $(".knob").val();
-          var dataString = 'type=b9a33b18054a368a&phrase=@@@@****@@@@&knob='+knob_val; 
+          var dataString = 'type=b8b35a24ee47885a&phrase=@@@@****@@@@&knob='+knob_val; 
           if(document.getElementById("bint1").checked) {
             dataString += "&bint1=1";
           }
