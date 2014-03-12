@@ -92,7 +92,7 @@
       }
       .onoffswitch-label {
           display: block; overflow: hidden; cursor: pointer;
-          border: 2px solid #FFFFFF; border-radius: 50px;
+          /*border: 2px solid #FFFFFF; border-radius: 50px;*/
       }
       .onoffswitch-inner {
           width: 200%; margin-left: -100%;
@@ -105,24 +105,25 @@
           -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
       }
       .onoffswitch-inner:before {
-          content: "Yes";
+          content: "";
           padding-left: 14px;
-          background-color: #EEEEEE; color: #2FCCFF;
+          background-color: #0000FF; color: #fff;
       }
       .onoffswitch-inner:after {
-          content: "No";
+          content: "";
           padding-right: 14px;
-          background-color: #EEEEEE; color: #999999;
-          text-align: right;
+          background-color: #FF0000; color: #fff;
       }
+      .bond:before{content: "Bond";}
+      .bond:after{content: "Bond";}
+      /*
       .onoffswitch-switch {
           width: 38px; margin: 1.5px;
           background: #A1A1A1;
-          border: 2px solid #FFFFFF; border-radius: 50px;
           position: absolute; top: 0; bottom: 0; right: 71px;
           -moz-transition: all 0.0s ease-in 0s; -webkit-transition: all 0.0s ease-in 0s;
           -o-transition: all 0.0s ease-in 0s; transition: all 0.0s ease-in 0s; 
-      }
+      }*/
       .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
           margin-left: 0;
       }
@@ -181,17 +182,17 @@
 					<form id="glassapush" method="post" class="text-center">
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    promote
+                    Bond
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int1">
                       <label class="onoffswitch-label" for="int1">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner bond"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    challenge
+                    Dominate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int2">
                       <label class="onoffswitch-label" for="int2">
@@ -201,7 +202,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    emotional
+                    Confront
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int3">
                       <label class="onoffswitch-label" for="int3">
@@ -213,7 +214,7 @@
                 </div><!--end-->
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    share
+                    Play
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int4">
                       <label class="onoffswitch-label" for="int4">
@@ -223,7 +224,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    gain power
+                    Appeal
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int5">
                       <label class="onoffswitch-label" for="int5">
@@ -233,7 +234,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    appeal power
+                    Inflict
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int6">
                       <label class="onoffswitch-label" for="int6">
@@ -246,7 +247,7 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Seek Info
+                    Support
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int7">
                       <label class="onoffswitch-label" for="int7">
@@ -256,7 +257,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Direct Confront
+                    Inquire
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int8">
                       <label class="onoffswitch-label" for="int8">
@@ -266,7 +267,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inflict Pain
+                    Manipulate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int9">
                       <label class="onoffswitch-label" for="int9">
@@ -279,7 +280,7 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Indirectly Dominate
+                    Share
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int10">
                       <label class="onoffswitch-label" for="int10">
@@ -289,7 +290,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Create Distance
+                    Inform
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int11">
                       <label class="onoffswitch-label" for="int11">
@@ -299,7 +300,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Provide Info
+                    Evade
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int12">
                       <label class="onoffswitch-label" for="int12">
@@ -309,7 +310,7 @@
                     </div>
                   </div>
                 </div><!--end-->
-                <input class="knob brainA" data-angleOffset=-125 data-angleArc=250 data-fgColor="#1585FF" value="50">
+                <!--<input class="knob brainA" data-angleOffset=-125 data-angleArc=250 data-fgColor="#1585FF" value="50">-->
 			        	<button class="btn btn-large btn-primary" type="button submit" name="submit" type="submit">Push to Ada</button><br />
 			        	<small><a href="http://glass.remap.ucla.edu/gb/glass.php?uid=f63b73e7988c018f" target="_blank">Glass.02 - f63b73e7988c018f</a></small>
                 <div class="lead text-center"><div id="glassatext" ></div></div>
@@ -318,18 +319,19 @@
 				<div class="span6">
 					<form id="glassbpush" method="post" class="text-center">
             <div class="row-fluid">
+                  <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    promote
+                    Bond
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint1">
                       <label class="onoffswitch-label" for="bint1">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner bond"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    challenge
+                    Dominate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint2">
                       <label class="onoffswitch-label" for="bint2">
@@ -339,7 +341,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    emotional
+                    Confront
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint3">
                       <label class="onoffswitch-label" for="bint3">
@@ -351,7 +353,7 @@
                 </div><!--end-->
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    share
+                    Play
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint4">
                       <label class="onoffswitch-label" for="bint4">
@@ -361,7 +363,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    gain power
+                    Appeal
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint5">
                       <label class="onoffswitch-label" for="bint5">
@@ -371,7 +373,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    appeal power
+                    Inflict
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint6">
                       <label class="onoffswitch-label" for="bint6">
@@ -384,7 +386,7 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Seek Info
+                    Support
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint7">
                       <label class="onoffswitch-label" for="bint7">
@@ -394,7 +396,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Direct Confront
+                    Inquire
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint8">
                       <label class="onoffswitch-label" for="bint8">
@@ -404,7 +406,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inflict Pain
+                    Manipulate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint9">
                       <label class="onoffswitch-label" for="bint9">
@@ -417,7 +419,7 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Indirectly Dominate
+                    Share
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint10">
                       <label class="onoffswitch-label" for="bint10">
@@ -427,7 +429,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Create Distance
+                    Inform
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint11">
                       <label class="onoffswitch-label" for="bint11">
@@ -437,7 +439,7 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Provide Info
+                    Evade
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint12">
                       <label class="onoffswitch-label" for="bint12">
@@ -447,7 +449,7 @@
                     </div>
                   </div>
                 </div><!--end-->
-			          <input class="knob brainB" data-angleOffset=-125 data-angleArc=250 data-fgColor="#1585FF" value="50">
+			          <!--<input class="knob brainB" data-angleOffset=-125 data-angleArc=250 data-fgColor="#1585FF" value="50">-->
               	<button class="btn btn-large btn-primary" type="button submit" name="submit" type="submit">Push to Steve</button><br />
                 <small><a href="http://glass.remap.ucla.edu/gb/glass.php?uid=b8b35a24ee47885a" target="_blank">Glass.03 - b8b35a24ee47885a</a></small>
 			        	<div class="lead text-center"><div id="glassbtext" ></div></div>

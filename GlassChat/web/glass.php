@@ -7,8 +7,9 @@
     <meta name="description" content="TFT Google Glass Concept">
     <meta name="author" content="Joon-Sub Chung">
 
-    <!-- CSS -->
+    <!-- CSS
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
+     -->
     <style type="text/css">
 
       /* Sticky footer styles
@@ -70,7 +71,7 @@
       }
 
     </style>
-    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!--<link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">-->
     <!--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>-->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -78,12 +79,13 @@
       <script src="./assets/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
+    <!-- Fav and touch icons 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="./assets/ico/favicon.png">
+    -->
   </head>
 
   <body>
@@ -96,8 +98,53 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="./assets/js/bootstrap.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <!--<script src="./assets/js/bootstrap.js"></script>-->
+    <script type="text/javascript">
+      
+      setInterval(function(){
+      //loadXMLDoc();
+      loadData();
+      },500);
+      function loadXMLDoc() {
+          var xmlhttp;
+
+          if (window.XMLHttpRequest) {
+              // code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp = new XMLHttpRequest();
+          } else {
+              // code for IE6, IE5
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+
+          xmlhttp.onreadystatechange = function() {
+              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                  document.getElementById("console").innerHTML = xmlhttp.responseText;
+              }
+          }
+          var dataString = 'uid='+QueryString.uid; 
+          xmlhttp.open("POST", "refresh2.php?"+dataString, true);
+          xmlhttp.send();
+      }
+var oldContent = "null";
+      function loadData() {   
+          var xobj = new XMLHttpRequest();
+          var dataString = 'uid='+QueryString.uid;
+          xobj.open('GET', 'http://glass.remap.ucla.edu/gb/refresh2.php?'+dataString, true);
+            //console.log('loading data');
+          xobj.onreadystatechange = function () {
+              if (xobj.readyState == 4 && xobj.status == 200) {
+                  if (oldContent != xobj.responseText){
+                    document.getElementById("console").innerHTML = xobj.responseText;
+                  }
+                  //console.log(xobj.responseText);
+                  //processData(jsonData);
+              }
+          }
+          xobj.send();
+      }
+      </script>
+
     <script type="text/javascript">
     	//setTimeout("location.reload(true);", 3000);
 
@@ -124,6 +171,8 @@
         return query_string;
     } ();
 
+    
+/*
       $(document).ready(function () {
           setInterval(function() {    
             var dataString = 'uid='+QueryString.uid; 
@@ -138,6 +187,7 @@
           return false;   
         }, 300); 
       });
+*/
     </script>
   </body>
 </html>
