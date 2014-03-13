@@ -19,6 +19,9 @@
       body {
       	font-family: 'Roboto', sans-serif;
         height: 100%;
+        color: #cccccc;
+        background-color:#000000
+
         /* The html and body elements cannot have any padding or margin. */
       }
 
