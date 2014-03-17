@@ -11,7 +11,7 @@
 	}
 	unset($_GET);
 
-	echo $phrase;
+	echo stripslashes($phrase);
 	//}
     mysql_close($con);
 ?>
