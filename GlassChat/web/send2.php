@@ -10,57 +10,19 @@
 
     include_once("common.php");
     $score = knob_score($knob);
-/*
-    if (!empty($_POST["int1"]) && $_POST["int1"] > 0) {
-        $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 1 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int2"]) && $_POST["int2"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 2 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int3"]) && $_POST["int3"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 3 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int4"]) && $_POST["int4"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 4 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int5"]) && $_POST["int5"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 5 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int6"]) && $_POST["int6"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 6 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int7"]) && $_POST["int7"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 7 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int8"]) && $_POST["int8"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 8 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int9"]) && $_POST["int9"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 9 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int10"]) && $_POST["int10"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 10 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int11"]) && $_POST["int11"] > 0) {
-       $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 11 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-    if (!empty($_POST["int12"]) && $_POST["int12"] > 0) {
-        $result = mysql_query("SELECT * FROM brain_intention, brain WHERE biIntentionID = 12 AND biID = id AND $score ORDER BY RAND() Limit 1") or die(mysql_error());  
-    }
-*/
     $rand = rand ( 1, 1000000);
-    console.log("send2.php :: getting record...");
+    //console.log("send2.php :: getting record...");
     $result = mysql_query("SELECT * FROM brain WHERE id = $rand Limit 1") or die(mysql_error()); 
-	console.log("send2.php :: got record.");
+	//console.log("send2.php :: got record.");
     while($row = mysql_fetch_array($result))
     {
         $sqlID = $row['id'];
         $sqlPhrase = $row['phrase'];
     }   
-	console.log("send2.php :: echoing record.");
+    error_log('got '.$sqlPhrase." ".$sqlID);
+	//console.log("send2.php :: echoing record.");
     echo $sqlPhrase;
 
-    
 
 
     function knob_score($cnt){
@@ -72,9 +34,14 @@
         // returns random number with flat distribution from 0 to 1
         return (float)rand()/(float)getrandmax();
     }
-
-    $result = mysql_query("INSERT INTO glass(gid, gphrase, gtype, gtime) VALUES (NULL, '$sqlPhrase', '$type', NULL);");
+	$safe = addslashes ( $sqlPhrase);
+	$q = "INSERT INTO glass(gid, gphrase, gtype, gtime) VALUES (NULL,'$safe' , '$type', NULL);";
+	error_log("query is ".$q);
+    $result = mysql_query($q);
+    error_log("inserted ok ?".$result);
         //$result = mysql_query("INSERT INTO log (logID, phraseID, glassID, brainScore, logTime) VALUES (NULL, '$loc', '$type', '$pushScore', CURRENT_TIMESTAMP);") or die(mysql_error());
+
+
 
     /*
 
