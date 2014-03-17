@@ -39,8 +39,11 @@
 	error_log("query is ".$q);
     $result = mysql_query($q);
     error_log("inserted ok ?".$result);
-        //$result = mysql_query("INSERT INTO log (logID, phraseID, glassID, brainScore, logTime) VALUES (NULL, '$loc', '$type', '$pushScore', CURRENT_TIMESTAMP);") or die(mysql_error());
-
+    
+    if (!$result){
+    	 echo("failed to update glass");
+    	 } else { echo $sqlPhrase;}
+    
 
 
     /*
