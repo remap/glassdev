@@ -186,7 +186,7 @@
       <!-- Begin page content -->
       <div class="container">
         <div class="page-header">
-          <h1>Global Brain: Admin Control Page</h1>
+          <h1 class="text-center">Global Brain: Admin Control Page</h1>
         </div>
         <p class="lead text-center">Select a Glass to submit a random phrase to the users screen.</p>
         <p>
@@ -461,6 +461,7 @@
 				</div>
 	        </div>
 	        <hr>
+          <!--
 	        <div class="row-fluid">
 	        	<div class="span12">
 					<form id="clear" method="post" class="text-center">
@@ -473,7 +474,7 @@
                 <strong>Clear Votes:</strong> Resets the sentiment dial to 50%.
               </div>
 				</div>
-			</div>
+			</div>-->
 
 	        
 
@@ -485,7 +486,7 @@
 
     <div id="footer">
       <div class="container">
-        <p class="muted credit">Google Glass Concept: Global Brain. Programmed by <a href="http://www.2souldesign.net">Joon-Sub</a>.</p>
+        <p class="muted credit">Google Glass Concept: Global Brain. Concept - Eben P. | GlassChat Dev Alex H. | Back-end Dev - Karan C. | Front-end Dev - <a href="http://www.2souldesign.net">Joon-Sub</a> C.</p>
       </div>
     </div>
 

@@ -52,7 +52,7 @@
     }   
     
     // print phrase to admin page
-    echo $sqlPhrase;
+    //
 
     // code that will cut the time to find a random row to const time.
     function random_row($table, $column, $intent) {
