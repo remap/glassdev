@@ -71,7 +71,7 @@
 
       .container {
         width: auto;
-        max-width: 680px;
+        max-width: 980px;
       }
       .container .credit {
         margin: 20px 0;
@@ -84,7 +84,9 @@
 
       /*Custom*/
       .onoffswitch {
-          position: relative; width: 116px;
+          font-size: 14px;
+          position: relative;
+          margin-bottom: 10px;
           -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
       }
       .onoffswitch-checkbox {
@@ -106,16 +108,42 @@
       }
       .onoffswitch-inner:before {
           content: "";
-          padding-left: 14px;
-          background-color: #0000FF; color: #fff;
+          /*padding-left: 13px;*/
+          background-color: #267EC4; color: #fff;
       }
       .onoffswitch-inner:after {
           content: "";
-          padding-right: 14px;
-          background-color: #FF0000; color: #fff;
+          /*padding-right: 0px;*/
+          color: #FFBEBE;
+          background-color: #E22F2F; color: #fff;
       }
       .bond:before{content: "Bond";}
       .bond:after{content: "Bond";}
+      .dominate:before{content: "Dominate";}
+      .dominate:after{content: "Dominate";}
+      .confront:before{content: "Confront";}
+      .confront:after{content: "Confront";}
+
+      .play:before{content: "Play";}
+      .play:after{content: "Play";}
+      .appeal:before{content: "Appeal";}
+      .appeal:after{content: "Appeal";}
+      .inflict:before{content: "Inflict";}
+      .inflict:after{content: "Inflict";}
+
+      .support:before{content: "Support";}
+      .support:after{content: "Support";}
+      .inquire:before{content: "Inquire";}
+      .inquire:after{content: "Inquire";}
+      .manipulate:before{content: "Manipulate";}
+      .manipulate:after{content: "Manipulate";}
+
+      .share:before{content: "Share";}
+      .share:after{content: "Share";}
+      .inform:before{content: "Inform";}
+      .inform:after{content: "Inform";}
+      .evade:before{content: "Evade";}
+      .evade:after{content: "Evade";}
       /*
       .onoffswitch-switch {
           width: 38px; margin: 1.5px;
@@ -182,7 +210,6 @@
 					<form id="glassapush" method="post" class="text-center">
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Bond
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int1">
                       <label class="onoffswitch-label" for="int1">
@@ -192,21 +219,19 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Dominate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int2">
                       <label class="onoffswitch-label" for="int2">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner dominate"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Confront
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int3">
                       <label class="onoffswitch-label" for="int3">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner confront"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -214,31 +239,28 @@
                 </div><!--end-->
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Play
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int4">
                       <label class="onoffswitch-label" for="int4">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner play"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Appeal
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int5">
                       <label class="onoffswitch-label" for="int5">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner appeal"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inflict
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int6">
                       <label class="onoffswitch-label" for="int6">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner inflict"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -247,31 +269,28 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Support
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int7">
                       <label class="onoffswitch-label" for="int7">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner support"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inquire
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int8">
                       <label class="onoffswitch-label" for="int8">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner inquire"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Manipulate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int9">
                       <label class="onoffswitch-label" for="int9">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner manipulate"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -280,31 +299,28 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Share
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int10">
                       <label class="onoffswitch-label" for="int10">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner share"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inform
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int11">
                       <label class="onoffswitch-label" for="int11">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner inform"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Evade
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="int12">
                       <label class="onoffswitch-label" for="int12">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner evade"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -321,7 +337,6 @@
             <div class="row-fluid">
                   <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Bond
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint1">
                       <label class="onoffswitch-label" for="bint1">
@@ -331,21 +346,19 @@
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Dominate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint2">
                       <label class="onoffswitch-label" for="bint2">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner dominate"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Confront
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint3">
                       <label class="onoffswitch-label" for="bint3">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner confront"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -353,31 +366,28 @@
                 </div><!--end-->
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Play
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint4">
                       <label class="onoffswitch-label" for="bint4">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner play"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Appeal
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint5">
                       <label class="onoffswitch-label" for="bint5">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner appeal"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inflict
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint6">
                       <label class="onoffswitch-label" for="bint6">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner inflict"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -386,31 +396,28 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Support
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint7">
                       <label class="onoffswitch-label" for="bint7">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner support"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inquire
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint8">
                       <label class="onoffswitch-label" for="bint8">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner inquire"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Manipulate
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint9">
                       <label class="onoffswitch-label" for="bint9">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner manipulate"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -419,31 +426,28 @@
 
                 <div class="row-fluid">
                   <div class="span4 toggleSwitch">
-                    Share
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint10">
                       <label class="onoffswitch-label" for="bint10">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner share"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Inform
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint11">
                       <label class="onoffswitch-label" for="bint11">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner inform"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
                   </div>
                   <div class="span4 toggleSwitch">
-                    Evade
                     <div class="onoffswitch">
                       <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bint12">
                       <label class="onoffswitch-label" for="bint12">
-                          <div class="onoffswitch-inner"></div>
+                          <div class="onoffswitch-inner evade"></div>
                           <div class="onoffswitch-switch"></div>
                       </label>
                     </div>
@@ -707,40 +711,40 @@
           var knob_val = $(".knob").val();
           var dataString = 'type=b8b35a24ee47885a&phrase=@@@@****@@@@&knob='+knob_val; 
           if(document.getElementById("bint1").checked) {
-            dataString += "&bint1=1";
+            dataString += "&int1=1";
           }
           if(document.getElementById("bint2").checked) {
-            dataString += "&bint2=2";
+            dataString += "&int2=2";
           }
           if(document.getElementById("bint3").checked) {
-            dataString += "&bint3=3";
+            dataString += "&int3=3";
           }
           if(document.getElementById("bint4").checked) {
-            dataString += "&bint4=4";
+            dataString += "&int4=4";
           }
           if(document.getElementById("bint5").checked) {
-            dataString += "&bint5=5";
+            dataString += "&int5=5";
           }
           if(document.getElementById("bint6").checked) {
-            dataString += "&bint6=6";
+            dataString += "&int6=6";
           }
           if(document.getElementById("bint7").checked) {
-            dataString += "&bint7=7";
+            dataString += "&int7=7";
           }
           if(document.getElementById("bint8").checked) {
-            dataString += "&bint8=8";
+            dataString += "&int8=8";
           }
           if(document.getElementById("bint9").checked) {
-            dataString += "&bint9=9";
+            dataString += "&int9=9";
           }
           if(document.getElementById("bint10").checked) {
-            dataString += "&bint10=10";
+            dataString += "&int10=10";
           }
           if(document.getElementById("bint11").checked) {
-            dataString += "&bint11=11";
+            dataString += "&int11=11";
           }
           if(document.getElementById("bint12").checked) {
-            dataString += "&bint12=12";
+            dataString += "&int12=12";
           }
         	//alert(dataString);
             $.ajax({     
