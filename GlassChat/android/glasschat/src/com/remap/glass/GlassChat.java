@@ -128,6 +128,12 @@ public class GlassChat extends Activity {
         engine.getSettings().setJavaScriptEnabled(true);
         engine.setBackgroundColor(0x00000000);
         
+        android.provider.Settings.System.putInt(getContentResolver(),
+                android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE, 0);
+        
+        android.provider.Settings.System.putInt(getContentResolver(),
+        android.provider.Settings.System.SCREEN_BRIGHTNESS, 75);
+        
         // load the page for display on glass
         engine.loadUrl(URL+android_id);
         
@@ -213,7 +219,8 @@ public class GlassChat extends Activity {
 			// this worked, but only when screen is blank
 			recorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
 			recorder.setVideoSource(MediaRecorder.VideoSource.DEFAULT);
-			CamcorderProfile cpHigh = CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH);
+			//CamcorderProfile cpHigh = CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH);
+			CamcorderProfile cpHigh = CamcorderProfile.get(CamcorderProfile.QUALITY_480P);
 			recorder.setProfile(cpHigh);
 
 			// this supposedly works, not tested yet

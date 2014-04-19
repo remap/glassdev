@@ -10,8 +10,9 @@
 
     <SurfaceView
         android:id="@+id/camera_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        android:layout_gravity="right"
         android:alpha="1"
         android:focusableInTouchMode="false"
         android:longClickable="false" />
